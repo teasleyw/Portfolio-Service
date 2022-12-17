@@ -14,7 +14,7 @@ public class MailController {
     public MailController(MailService mailService) {
         this.mailService = mailService;
     }
-        @PostMapping ("/sendEmail")
+        @PostMapping ("/submitPoem")
         public String sendSimpleMessage(@RequestBody PoemRequest poemData){
             String firstName = poemData.getFirstName();
             mailService.sendMail(poemData);

@@ -45,7 +45,8 @@ public class MailService {
         message.setFrom("FrostMilano42@gmail.com");
         message.setTo("FrostMilano42@gmail.com");
         message.setSubject(data.getPoemTitle());
-        message.setText(data.getPoem());
+        message.setText("Poem Author: " + data.getFirstName() + " " + data.getLastName() +"\n\n" +
+                "Poem Content: \n\n" + data.getPoem());
         emailSender.send(message);
     }
 }
