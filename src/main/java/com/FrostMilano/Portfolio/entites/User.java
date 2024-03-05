@@ -23,6 +23,11 @@ public class User {
     @Size(max = 100)
     private String firstName;
 
+    @Column(name = "email", nullable = false)
+    @Size(max = 100)
+    private String email;
+
+
     @Column(name = "last_name", nullable = false)
     @Size(max = 100)
     private String lastName;
