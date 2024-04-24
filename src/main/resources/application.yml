@@ -4,9 +4,27 @@
 #mail.password=nkqgrmqovgqtbyfh
 #mail.properties.mail.smtp.auth=true
 #mail.properties.mail.smtp.starttls.enable=true
+linkedin:
+  client-id: 86mi7uhgg05ymd
+  client-secret: VOigSRMlMJRGVhGc
+  redirect-uri: http://localhost:3000/auth/linkedin/callback
+# Set the maximum file size allowed for uploads (in bytes)
 security.jwt.token.secret-key: my-secret-key
 spring:
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
   datasource:
+
+    hikari:
+      auto-commit: false
+      maximum-pool-size: 20
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+      connection-test-query: SELECT 1
+
     platform: postgres
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/portfolio

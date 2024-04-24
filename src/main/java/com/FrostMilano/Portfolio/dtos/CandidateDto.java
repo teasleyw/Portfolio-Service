@@ -9,24 +9,22 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class UserDto {
-
-
+public class CandidateDto {
     private Long id;
     private String firstName;
     private String lastName;
-    private String role;
     private String job;
     private Boolean topStatus;
-    private String experience;
-    private String description;
     private String email;
-    private String login;
-    private String token;
+    private byte[] resume;
+    private byte[] profilePicture;
+    private String description;
+    private String workPreference;
+    private String experience;
     private String attainment;
     private String location;
+    private String company;
     private String quota;
     private String compRange;
     private String industry;
-    private String company;
 }
