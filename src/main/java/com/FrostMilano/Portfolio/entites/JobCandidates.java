@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @Data
 @Entity
-@Table(name = "job_table")
+@Table(name = "job_candidate_table")
 public class JobCandidates {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,7 +24,7 @@ public class JobCandidates {
     private Long jobId;
 
     @Column(nullable = false)
-    private Long status;
+    private String status;
 
 
 
