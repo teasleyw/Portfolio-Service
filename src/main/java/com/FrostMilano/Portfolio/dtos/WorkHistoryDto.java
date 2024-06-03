@@ -9,13 +9,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class JobDto  {
+public class WorkHistoryDto {
     private Long id;
-    private Long companyId;
-    private String title;
-    private String description;
-    private String workType;
-    private String location;
-    private String experience;
+    private Long userId;
     private String company;
+    private String endDate;
+    private String startDate;
+    private String jobTitle;
 }

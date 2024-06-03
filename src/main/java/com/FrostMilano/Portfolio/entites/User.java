@@ -84,6 +84,10 @@ public class User {
     @Size(max = 100)
     private String industry;
 
+    private String answerOne;
+
+    private String answerTwo;
+
     @Size(max = 100)
     private String quota;
 }

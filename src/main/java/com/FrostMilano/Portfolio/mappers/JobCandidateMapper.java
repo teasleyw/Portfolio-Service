@@ -5,6 +5,7 @@ import com.FrostMilano.Portfolio.dtos.JobDto;
 import com.FrostMilano.Portfolio.entites.Job;
 import com.FrostMilano.Portfolio.entites.JobCandidates;
 import org.mapstruct.Mapper;
+import org.mapstruct.MappingTarget;
 
 import java.util.List;
 
@@ -15,4 +16,6 @@ public interface JobCandidateMapper {
     List<JobCandidateDto> toJobCandidateDtos(List<JobCandidates> jobs);
 
     JobCandidates addCandidateDtoToEntity(JobCandidateDto jobCandidateDto);
+    // Method to update an existing JobCandidates entity from a JobCandidateDto
+    void updateCandidateFromDto(JobCandidateDto dto, @MappingTarget JobCandidates entity);
 }

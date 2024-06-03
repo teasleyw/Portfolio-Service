@@ -9,9 +9,11 @@ import com.FrostMilano.Portfolio.mappers.JobMapper;
 import com.FrostMilano.Portfolio.repositories.JobCandidatesRepository;
 import com.FrostMilano.Portfolio.repositories.JobRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Service
@@ -36,11 +38,13 @@ public class JobService {
 
         return jobMapper.toJobDto(savedJob);
     }
-    public JobCandidateDto addJobCandidate (JobCandidateDto jobCandidateDto) {
-        JobCandidates job = jobCandidateMapper.addCandidateDtoToEntity(jobCandidateDto);
-
-        JobCandidates savedJob = jobCandidatesRepository.save(job);
-
-        return jobCandidateMapper.toJobCandidateDto(savedJob);
+    public List<JobDto> getJobsByCompanyId(Long companyId) {
+        // Implement logic to fetch jobs by companyId from your repository
+        List<Job> jobs = jobRepository.findByCompanyId(companyId);
+        // Convert the list of Job entities to a list of JobDto objects
+        return jobs.stream()
+                .map(jobMapper::toJobDto)
+                .collect(Collectors.toList());
     }
+
 }

@@ -9,8 +9,7 @@ import java.util.List;
 @Mapper(componentModel = "spring")
 public interface MetricsMapper {
     List<MetricsDTO> toMetricsDTO(List<Metrics> metrics);
-    Metrics createMetric(MetricsDTO metrics);
-
+    Metrics toMetricsEntity(MetricsDTO metricsDTO);
     MetricsDTO toMetricDto(Metrics metrics);
 
 

@@ -1,5 +1,7 @@
 package com.FrostMilano.Portfolio.entites;
+
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -10,19 +12,22 @@ import lombok.NoArgsConstructor;
 @Builder
 @Data
 @Entity
-@Table(name = "job_candidate_table",
-        uniqueConstraints = {@UniqueConstraint(columnNames = {"userId", "jobId"})})
-public class JobCandidates {
+@Table(name = "Q_and_A_table")
+public class QandA {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @Column(name = "user_id", nullable = false)
     private Long userId;
 
-    @Column(nullable = false)
-    private Long jobId;
+    @Column(name = "question", nullable = false)
+    @Size(max = 100)
+    private String question;
 
-    @Column(nullable = false)
-    private String status;
+    @Column(name = "answer", nullable = false)
+    @Size(max = 2000)
+    private String answer;
+
+
 }

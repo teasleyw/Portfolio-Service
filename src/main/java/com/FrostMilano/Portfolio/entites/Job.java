@@ -18,6 +18,9 @@ public class Job {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "company_id", nullable = false)
+    private Long companyId;
+
     @Column(name = "title", nullable = false)
     @Size(max = 100)
     private String title;

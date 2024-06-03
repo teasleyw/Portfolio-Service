@@ -25,15 +25,5 @@ public class MetricsService {
         return metricsMapper.toMetricDto(metrics);
     }
 
-    public List<MetricsDTO> getMetricsByUserId(Long userId) {
-        List<Metrics> metricsList = metricsRepository.findByUserId(userId);
-        return metricsMapper.toMetricsDTO(metricsList);
-    }
-
-    public MetricsDTO createMetrics(MetricsDTO metricsDTO) {
-        Metrics metrics = metricsMapper.createMetric(metricsDTO);
-        Metrics savedMetrics = metricsRepository.save(metrics);
-        return metricsMapper.toMetricDto(savedMetrics);
-    }
 
 }

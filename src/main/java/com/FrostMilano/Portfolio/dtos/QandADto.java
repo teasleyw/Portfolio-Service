@@ -9,13 +9,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class JobDto  {
+public class QandADto {
     private Long id;
-    private Long companyId;
-    private String title;
-    private String description;
-    private String workType;
-    private String location;
-    private String experience;
-    private String company;
+    private Long userId;
+    private String question;
+    private String answer;
 }
