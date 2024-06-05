@@ -25,7 +25,7 @@ public class WebConfig {
         CorsConfiguration config = new CorsConfiguration();
         config.setAllowCredentials(true);
         config.addAllowedOrigin("http://localhost:3000");
-        config.addAllowedOrigin("https://proud-mud-065dd5c1e.5.azurestaticapps.net/");
+        config.addAllowedOrigin("https://proud-mud-065dd5c1e.5.azurestaticapps.net");
         config.setAllowedHeaders(Arrays.asList(
                 HttpHeaders.AUTHORIZATION,
                 HttpHeaders.CONTENT_TYPE,
