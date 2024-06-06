@@ -60,6 +60,7 @@ jobs:
         uses: azure/login@v1
         with:
           client-id: 1281547b-19c7-41b8-b28d-fd2d068358dd
+          object-id: 22177130-642f-41d9-9211-74237ad5687d
           subscription-id: 5ba3ba69-1034-49a7-b13b-3f40feb48c4c
 
 
