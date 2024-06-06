@@ -33,6 +33,7 @@ spring:
     username: teasleyw
     password: Bulleit652
     initialization-mode: always
+
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     show-sql: false
