@@ -29,9 +29,9 @@ spring:
     driver-class-name: org.postgresql.Driver
 #    url: jdbc:postgresql://localhost:5432/portfolio
 #    username: postgres
-    url: jdbc:postgresql://lionseyepostgres.postgres.database.azure.com:5432/postgres
+    url: jdbc:postgresql://lionseyepostgres.postgres.database.azure.com:5432/postgres?sslmode=require
     username: teasleyw
-    password: Bulleit652!!
+    password: Bulleit652
     initialization-mode: always
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
