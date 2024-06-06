@@ -52,21 +52,21 @@ jobs:
 
     steps:
       - name: Download artifact from build job
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: java-app
 
       - name: Login to Azure
-        uses: azure/login@v1
+        uses: azure/login@v4
         with:
           client-id: 1281547b-19c7-41b8-b28d-fd2d068358dd
-          tenant-id:  6f684d6f-1196-4de1-ae2d-e751af11fb9d
+          object-id: 6f684d6f-1196-4de1-ae2d-e751af11fb9d
           subscription-id: 5ba3ba69-1034-49a7-b13b-3f40feb48c4c
 
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
-        uses: azure/webapps-deploy@v2
+        uses: azure/webapps-deploy@v4
         with:
           app-name: 'LionsEyeBackend'
           slot-name: 'Production'
