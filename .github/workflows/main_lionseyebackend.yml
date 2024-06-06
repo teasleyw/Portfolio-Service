@@ -32,12 +32,6 @@ jobs:
       - name: Grant execute permission for Gradle wrapper
         run: chmod +x gradlew
 
-      - name: Ensure Lombok is downloaded
-        run: ./gradlew lombok
-
-      - name: Verify Lombok is installed
-        run: ./gradlew dependencies --configuration annotationProcessor
-
       - name: Build with Gradle
         run: ./gradlew clean build --info --stacktrace
 
