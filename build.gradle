@@ -25,10 +25,10 @@ dependencies {
 	implementation 'jakarta.persistence:jakarta.persistence-api'
 
 	// Lombok
-	compileOnly 'org.projectlombok:lombok:1.18.24'
+	compileOnly 'org.projectlombok:lombok:1.18.32'
 	annotationProcessor 'org.projectlombok:lombok'
-	testCompileOnly 'org.projectlombok:lombok:1.18.24'
-	testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
+	testCompileOnly 'org.projectlombok:lombok:1.18.32'
+	testAnnotationProcessor 'org.projectlombok:lombok:1.18.32'
 
 	// MapStruct
 	implementation 'org.mapstruct:mapstruct:1.5.1.Final'
