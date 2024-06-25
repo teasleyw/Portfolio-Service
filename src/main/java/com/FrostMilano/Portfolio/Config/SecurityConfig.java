@@ -29,7 +29,8 @@ public class SecurityConfig {
                 .authorizeHttpRequests((requests) -> requests
                         .requestMatchers(HttpMethod.POST, "/login", "/register").permitAll()
                         .requestMatchers(HttpMethod.GET,
-                                "/{userId:[\\d]+}/profile-picture","/candidates","/linkedin/callback","/linkedin/userinfo").permitAll()
+                                "/{userId:[\\d]+}/profile-picture","/{userId:[\\d]+}/candidates/info","/candidates","/linkedin/callback","/linkedin/userinfo,","/metrics/{userId:[\\d]+}"
+                        , "/workhistory/{userId:[\\d]+}","/{userId:[\\d]+}/resume","/QandA/{userId:[\\d]+}").permitAll()
                         .anyRequest().authenticated())
 
 
