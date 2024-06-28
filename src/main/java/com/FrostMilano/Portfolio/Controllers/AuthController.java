@@ -5,14 +5,12 @@ import com.FrostMilano.Portfolio.dtos.CredentialsDto;
 import com.FrostMilano.Portfolio.dtos.SignUpDto;
 import com.FrostMilano.Portfolio.dtos.UserDto;
 import com.FrostMilano.Portfolio.config.UserAuthenticationProvider;
+import com.FrostMilano.Portfolio.repositories.UserRepository;
 import com.FrostMilano.Portfolio.services.UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
 
@@ -21,6 +19,7 @@ import java.net.URI;
 public class AuthController {
 
     private final UserService userService;
+    private final UserRepository userRepository;
     private final UserAuthenticationProvider userAuthenticationProvider;
 
     @PostMapping("/login")
@@ -35,6 +34,14 @@ public class AuthController {
         UserDto createdUser = userService.register(user);
         createdUser.setToken(userAuthenticationProvider.createToken(createdUser));
         return ResponseEntity.created(URI.create("/users/" + createdUser.getId())).body(createdUser);
+    }
+    @DeleteMapping("/delete/{userId}")
+    public ResponseEntity<Void> deleteUser(@PathVariable Long userId) {
+        if (!userRepository.existsById(userId)) {
+            return ResponseEntity.notFound().build();
+        }
+        userRepository.deleteById(userId);
+        return ResponseEntity.noContent().build();
     }
 
 }

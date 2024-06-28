@@ -88,7 +88,7 @@ public class UserService {
     }
 
     public List<CandidateDto> getAllCandidates() {
-        List<User> users  = userRepository.findByRole("candidate");
+        List<User> users  = userRepository.findByRole("Candidate");
         return userMapper.toCandidateDtos(users);
     }
     public byte[] getResume(Long userId) {
