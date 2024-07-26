@@ -14,6 +14,11 @@ repositories {
 
 
 dependencies {
+	// https://mvnrepository.com/artifact/jakarta.mail/jakarta.mail-api
+	// https://mvnrepository.com/artifact/com.sun.mail/jakarta.mail
+	implementation 'com.sun.mail:jakarta.mail:2.0.1'
+
+
 	implementation 'org.springframework.boot:spring-boot-starter-web:3.0.2'
 	implementation 'org.seleniumhq.selenium:selenium-java:4.9.1'
 	implementation 'com.auth0:java-jwt:4.3.0'

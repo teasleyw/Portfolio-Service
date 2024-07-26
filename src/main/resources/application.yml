@@ -1,9 +1,6 @@
-#mail.host=smtp.gmail.com
-#mail.port=587
-#mail.username=FrostMilano42@gmail.com
-#mail.password=nkqgrmqovgqtbyfh
-#mail.properties.mail.smtp.auth=true
-#mail.properties.mail.smtp.starttls.enable=true
+
+
+
 linkedin:
   client-id: 86mi7uhgg05ymd
   client-secret: VOigSRMlMJRGVhGc
@@ -11,6 +8,18 @@ linkedin:
 # Set the maximum file size allowed for uploads (in bytes)
 security.jwt.token.secret-key: my-secret-key
 spring:
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: frostmilano42@gmail.com
+    password: "tjjj phkb fgap pkbe"
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
   servlet:
     multipart:
       max-file-size: 10MB
@@ -27,11 +36,12 @@ spring:
 
     platform: postgres
     driver-class-name: org.postgresql.Driver
-#    url: jdbc:postgresql://localhost:5432/portfolio
-#    username: postgres
-    url: jdbc:postgresql://lionseyepostgres.postgres.database.azure.com:5432/postgres
-    username: teasleyw
-    password: Bulleit652
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: SupremeGod99
+#    url: jdbc:postgresql://lionseyepostgres.postgres.database.azure.com:5432/postgres
+#    username: teasleyw
+#    password: Bulleit652
     initialization-mode: always
 
 
